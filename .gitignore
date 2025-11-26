@@ -1,0 +1,57 @@
+# --- Arquivos de Compilação (Object files) ---
+*.o
+*.obj
+
+# --- Executáveis e Binários ---
+# Windows
+*.exe
+*.dll
+
+# Linux / Unix / macOS (Geralmente sem extensão ou .out)
+*.out
+*.app
+*.so
+*.dylib
+
+# Se você costuma nomear seu executável como 'main', ignore-o:
+main
+
+# --- Bibliotecas Estáticas ---
+*.a
+*.lib
+
+# --- Pastas de Build (Recomendado) ---
+# É boa prática compilar tudo para dentro de pastas específicas
+bin/
+build/
+obj/
+dist/
+
+# --- Arquivos de Debug ---
+*.dSYM/
+*.pdb
+
+# --- Build Systems (CMake, Make) ---
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+Makefile.bak
+
+# --- Editores e IDEs ---
+# VS Code
+.vscode/
+*.code-workspace
+
+# IntelliJ / CLion
+.idea/
+*.iml
+
+# Vim / Emacs
+*.swp
+*~
+.#*
+
+# --- Sistema Operacional ---
+.DS_Store
+Thumbs.db
