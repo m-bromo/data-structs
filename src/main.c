@@ -2,7 +2,7 @@
 #include "queue.h"
 
 int main() {
-    Queue *queue = create_queue();
+    queue *queue = create_queue();
     
     insert(queue, 10);
     insert(queue, 20);

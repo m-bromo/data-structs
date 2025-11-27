@@ -2,58 +2,58 @@
 #include <stdlib.h>
 #include "queue.h" 
 
-Queue *create_queue() {
-    Queue *queue = (Queue*) malloc(sizeof(Queue));
-    if (queue != NULL) {
-        queue->head = NULL;
-        queue->tail = NULL;
-        queue->size = 0;
+queue *create_queue() {
+    queue *q = (queue*) malloc(sizeof(queue));
+    if (q != NULL) {
+        q->head = NULL;
+        q->tail = NULL;
+        q->size = 0;
     }
-    return queue;
+    return q;
 }
 
-bool is_empty(Queue *queue) {
-    return queue->size == 0;
+bool is_empty(queue *q) {
+    return q->size == 0;
 }
 
-int size(Queue *queue) {
-    return queue->size;
+int size(queue *q) {
+    return q->size;
 }
 
-void insert(Queue *queue, int data) {
-    Node *newNode = (Node*) malloc(sizeof(Node));
+void insert(queue *q, int data) {
+    simple_node *newNode = (simple_node*) malloc(sizeof(simple_node));
     if (newNode == NULL) return;
 
     newNode->data = data;
     newNode->next = NULL;
-    queue->size++;
+    q->size++;
 
-    if (queue->head == NULL) { 
-        queue->head = newNode;
-        queue->tail = newNode;
+    if (q->head == NULL) { 
+        q->head = newNode;
+        q->tail = newNode;
         return;
     }
 
-    queue->tail->next = newNode;
-    queue->tail = newNode;
+    q->tail->next = newNode;
+    q->tail = newNode;
 }
 
-void pop(Queue *queue) {
-    if (queue->head == NULL) return;
+void pop(queue *q) {
+    if (q->head == NULL) return;
 
-    Node *aux = queue->head;
-    queue->head = queue->head->next;
+    simple_node *aux = q->head;
+    q->head = q->head->next;
     free(aux);
     
-    queue->size--;
+    q->size--;
 
-    if (queue->head == NULL) {
-        queue->tail = NULL;
+    if (q->head == NULL) {
+        q->tail = NULL;
     }
 }
 
-void print_queue(Queue *queue) {
-    Node *aux = queue->head;
+void print_queue(queue *q) {
+    simple_node *aux = q->head;
     while(aux != NULL) {
         printf("[%d] -> ", aux->data);
         aux = aux->next;

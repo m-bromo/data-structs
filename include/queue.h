@@ -1,25 +1,21 @@
 #ifndef QUEUE_H  
 #define QUEUE_H   
 
-#include <stdbool.h> 
+#include <stdbool.h>
+#include "node.h"
 
-typedef struct Node {
-    int data;
-    struct Node *next;
-} Node;
-
-typedef struct Queue {
-    Node *head;
-    Node *tail;
+typedef struct queue {
+    simple_node *head;
+    simple_node *tail;
     int size;
-} Queue;
+} queue;
 
 
-Queue *create_queue();
-bool is_empty(Queue *queue);
-int size(Queue *queue);
-void insert(Queue *queue, int data);
-void pop(Queue *queue);
-void print_queue(Queue *queue);
+queue *create_queue();
+bool is_empty(queue *q);
+int size(queue *q);
+void insert(queue *q, int data);
+void pop(queue *q);
+void print_queue(queue *q);
 
 #endif 
