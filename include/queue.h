@@ -10,12 +10,11 @@ typedef struct queue {
     int size;
 } queue;
 
-
 queue *create_queue();
-bool is_empty(queue *q);
-int size(queue *q);
-void insert(queue *q, int data);
-void pop(queue *q);
+bool queue_is_empty(queue *q);
+int queue_size(queue *q);
+void enqueue(queue *q, int data);
+void dequeue(queue *q);
 void print_queue(queue *q);
 
 #endif 
