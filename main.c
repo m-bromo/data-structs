@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "queue.h"
 #include "stack.h"
+#include "linked_list.h"
 
 int main() {
     queue *queue = create_queue();
@@ -27,6 +28,15 @@ int main() {
     pop(s);
 
     print_stack(s);
-    
-    return 0;
+
+    linked_list *l = create_linked_list();
+
+    append(l, 1);
+    append(l, 2);
+    append(l, 3);
+    prepend(l, 5);
+    prepend(l, 6);
+
+    print_linked_list(l);
+    printf("%d", l->head->data);
 }

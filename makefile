@@ -1,3 +1,3 @@
 run:
-	gcc src/queue.c src/stack.c src/main.c -Iinclude -o main
+	gcc src/queue.c src/stack.c src/linked_list.c main.c -Iinclude -o main
 	./main
